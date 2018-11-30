@@ -9,7 +9,7 @@ import java.util.Date;
 public class HttpDownloader implements Downloader
 {
     Date testStartTime, testEndTime;
-    Long byteSize;
+    Long byteSize = 0l;
     Integer downloadRate;
     String objectURL;
     String tempFile = "./dload.out";
@@ -30,7 +30,8 @@ public class HttpDownloader implements Downloader
             int byteContent;
             while ((byteContent = inputStream.read(data, 0, 1024)) != -1)
             {
-                fileOS.write(data, 0, byteContent);
+                byteSize += data.length;
+                //fileOS.write(data, 0, byteContent);
             }
         }
         catch (Exception ex)
@@ -39,9 +40,9 @@ public class HttpDownloader implements Downloader
             ex.printStackTrace();
         }
         testEndTime = new Date();
-        File oFile = new File(tempFile);
-        byteSize = oFile.length();
-        oFile.delete();
+        // File oFile = new File(tempFile);
+        // byteSize = oFile.length();
+        // oFile.delete();
     }
 
     @Override
@@ -58,11 +59,11 @@ public class HttpDownloader implements Downloader
     public Float getDownloadRate()
     {
         Float rFloat;
-        Long mbitSize = (((byteSize / 1024) / 1024) * 8);
+        Long mbitSize = byteSize / 125000;
         Long elapsed = ((testEndTime.getTime() - testStartTime.getTime()) / 1000);
         // System.out.println(elapsed + " seconds elapsed to download a " + mbitSize + " megabit file.");
 
-        rFloat = Float.valueOf(mbitSize/elapsed);
+        rFloat = mbitSize.floatValue()/elapsed.floatValue();
         return rFloat;
     }
 

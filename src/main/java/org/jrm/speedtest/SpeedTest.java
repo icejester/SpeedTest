@@ -12,7 +12,7 @@ public class SpeedTest
     public String index()
     {
         String returnString;
-        Downloader dl = new DownloaderFactory().genDownloader();
+        Downloader dl = new DownloaderFactory(null).genDownloader();
 
         dl.download();
 

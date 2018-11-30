@@ -17,7 +17,7 @@ class DownloaderFactoryTest {
     @BeforeEach
     void setUp()
     {
-        df = new DownloaderFactory();
+        df = new DownloaderFactory(null);
     }
 
     @AfterEach
