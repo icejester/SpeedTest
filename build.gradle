@@ -7,9 +7,11 @@ buildscript {
     }
 }
 
-plugins {
-    id 'java'
-}
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 group 'org.jrm'
 version '1.0-SNAPSHOT'
