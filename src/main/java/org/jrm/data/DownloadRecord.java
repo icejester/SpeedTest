@@ -6,13 +6,12 @@ public class DownloadRecord
 {
     Date testStartTime, testEndTime;
     Long byteSize;
-    Integer downloadRate;
+    Float downloadRate;
 
-    public DownloadRecord(Long startMilli, Long stopMilli, Long mbSize, Integer rate)
+    public DownloadRecord (Date startDate, Date stopDate, Float rate)
     {
-        testStartTime = new Date(startMilli);
-        testEndTime = new Date(stopMilli);
-        byteSize = mbSize;
+        testStartTime = startDate;
+        testEndTime = stopDate;
         downloadRate = rate;
     }
 
@@ -28,7 +27,7 @@ public class DownloadRecord
         return byteSize;
     }
 
-    public Integer getDownloadRate() {
+    public Float getDownloadRate() {
         return downloadRate;
     }
 }
