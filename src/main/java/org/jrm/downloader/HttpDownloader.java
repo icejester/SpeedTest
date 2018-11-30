@@ -60,7 +60,7 @@ public class HttpDownloader implements Downloader
         Float rFloat;
         Long mbitSize = (((byteSize / 1024) / 1024) * 8);
         Long elapsed = ((testEndTime.getTime() - testStartTime.getTime()) / 1000);
-        System.out.println(elapsed + " seconds elapsed to download a " + mbitSize + " megabit file.");
+        // System.out.println(elapsed + " seconds elapsed to download a " + mbitSize + " megabit file.");
 
         rFloat = Float.valueOf(mbitSize/elapsed);
         return rFloat;
