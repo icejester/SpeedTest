@@ -7,23 +7,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class SpeedTest
+public class DoRecord
 {
-    @RequestMapping("/SpeedTest")
+    @RequestMapping("/doRecord")
     public String index()
     {
 
-        String returnString;
+        String returnString = "Download complete\n";
         DownloadRecord dr = DownloadRecord.getInstance();
-        returnString = dr.getTestStartTime().toString() + " ";
-        returnString += dr.getDownloadRate().toString() + " mb/s\n";
-        /*
         Downloader dl = new DownloaderFactory(null).genDownloader();
 
         dl.download();
 
-        returnString = dl.getDownloadRate().toString() + "mb/s\n";
-        */
+        dr.setTestStartTime(dl.getStartTime());
+        dr.setTestEndTime(dl.getEndTime());
+        dr.setDownloadRate(dl.getDownloadRate());
         return returnString;
     }
 }
