@@ -17,8 +17,8 @@ public class DoRecord
     {
         String returnString = "Download complete\n";
         // DownloadRecord dr = DownloadRecord.getInstance();
-        // Persistence pl = new PersistenceFactory().getPersistence(PersistenceType.MEMORY);
-        Persistence pl = new PersistenceFactory().getPersistence(PersistenceType.MONGO);
+        Persistence pl = new PersistenceFactory().getPersistence(PersistenceType.MEMORY);
+        // Persistence pl = new PersistenceFactory().getPersistence(PersistenceType.MONGO);
         Downloader dl = new DownloaderFactory(null).genDownloader();
 
         dl.download();
