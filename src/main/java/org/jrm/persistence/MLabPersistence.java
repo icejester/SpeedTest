@@ -10,13 +10,19 @@ import org.jrm.io.FileInput;
 
 import java.util.Date;
 
+/**
+ * Class model for a MongoDB implementation of persistence
+ * @author Jared Mallas
+ * @version 1.0
+ * @see org.jrm.persistence.Persistence
+ */
 public class MLabPersistence implements Persistence
 {
     String connString;
     String db;
-    MongoClient mongoClient;
-    MongoDatabase database;
-    MongoCollection<Document> collection;
+    private MongoClient mongoClient;
+    private MongoDatabase database;
+    private MongoCollection<Document> collection;
 
     private static MLabPersistence inst = null;
     private MLabPersistence ()
@@ -30,7 +36,7 @@ public class MLabPersistence implements Persistence
         collection = database.getCollection("SpeedTests");
     }
 
-    public static MLabPersistence getInstance()
+    static MLabPersistence getInstance()
     {
         synchronized (MemoryPersistence.class)
         {

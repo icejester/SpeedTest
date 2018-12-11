@@ -4,12 +4,18 @@ import org.jrm.data.DownloadRecord;
 
 import java.util.Date;
 
+/**
+ * Class model for an "in memory" implementation of persistence
+ * @author Jared Mallas
+ * @version 1.0
+ * @see org.jrm.persistence.Persistence
+ */
 public class MemoryPersistence implements Persistence
 {
     private static MemoryPersistence inst = null;
     private MemoryPersistence () {}
 
-    public static MemoryPersistence getInstance()
+    static MemoryPersistence getInstance()
     {
         synchronized (MemoryPersistence.class)
         {
