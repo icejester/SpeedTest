@@ -28,6 +28,7 @@ public class MLabPersistence implements Persistence
     private MLabPersistence ()
     {
         String connString;
+        // TODO: Figure out how to best inject this
         FileInput fi = new FileInput("./constring");
         connString = fi.readFile();
 

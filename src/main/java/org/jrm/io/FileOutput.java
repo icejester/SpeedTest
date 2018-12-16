@@ -25,6 +25,7 @@ public class FileOutput
         }
         catch(FileNotFoundException e)
         {
+            // TODO: Handle this exception and logging
             System.out.println("Unable to open file for write: " + filePath + " "  + e);
         }
     }
@@ -42,6 +43,7 @@ public class FileOutput
         }
         catch(Exception e)
         {
+            // TODO: Handle this exception and logging
             System.out.println("File Write Error: " + filePath + " "  + e);
         }
     }
