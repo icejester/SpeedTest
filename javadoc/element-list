@@ -1,0 +1,7 @@
+org.jrm
+org.jrm.data
+org.jrm.downloader
+org.jrm.io
+org.jrm.persistence
+org.jrm.speedtest
+org.jrm.util

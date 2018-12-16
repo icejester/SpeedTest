@@ -2,6 +2,11 @@ package org.jrm.data;
 
 import java.util.Date;
 
+/**
+ * Class model for a download record representing a single "download speed test"
+ * @author Jared Mallas
+ * @version 1.0
+ */
 public class DownloadRecord
 {
     private static DownloadRecord inst = null;
