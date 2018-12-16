@@ -26,7 +26,7 @@ public class DownloaderFactory
 
     public DownloaderFactory(String target)
     {
-        //TODO: HANDLE THIS
+        //TODO: Determine how to select a random url from list of known good urls
         this.target = "http://speedtest-ny.turnkeyinternet.net/100mb.bin";
     }
 }

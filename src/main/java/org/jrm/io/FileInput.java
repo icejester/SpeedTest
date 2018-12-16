@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Class model for FileInput
@@ -12,6 +14,8 @@ import java.io.IOException;
  */
 public class FileInput
 {
+    public static final Logger logger = LogManager.getLogger(FileInput.class);
+
     public String filePath;
     private BufferedReader in = null;
 
@@ -29,8 +33,8 @@ public class FileInput
         }
         catch (FileNotFoundException e)
         {
-            // TODO: Handle this exception and logging
-            System.out.println("File: " + filePath + " not found");
+            // TODO: Handle this exception
+            logger.error("File: " + filePath + " not found");
             this.filePath = null;
         }
     }
@@ -55,8 +59,8 @@ public class FileInput
         }
         catch (Exception e)
         {
-            // TODO: Handle this exception and logging
-            System.out.println("File Read Error: " + filePath + " " + e);
+            // TODO: Handle this exception
+            logger.error("File read error: " + filePath);
         }
         return rString;
     }
@@ -75,8 +79,8 @@ public class FileInput
         }
         catch (IOException e)
         {
-            // TODO: Handle this exception and logging
-            System.out.println("File Read Error: " + filePath + " " + e);
+            // TODO: Handle this exception
+            logger.error("File Read Error: " + filePath);
         }
         return rString;
     }
@@ -89,7 +93,8 @@ public class FileInput
             try {
                 in.close();
             } catch (IOException e) {
-                // TODO: Handle this exception and logging
+                // TODO: Handle this exception
+                logger.error("Unable to close file handle " + in.toString());
                 e.printStackTrace();
             }
         }

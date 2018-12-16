@@ -32,6 +32,8 @@ dependencies {
     compile("org.mongodb:mongodb-driver-core:3.9.1")
     compile("org.mongodb:bson:3.9.1")
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.1'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.1'
     testCompile('org.junit.jupiter:junit-jupiter-api:5.3.2')
     testCompile('org.junit.jupiter:junit-jupiter-params:5.3.2')
     testRuntime('org.junit.jupiter:junit-jupiter-engine:5.3.2')

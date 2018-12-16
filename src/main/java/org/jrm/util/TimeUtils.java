@@ -1,5 +1,8 @@
 package org.jrm.util;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,6 +18,7 @@ public class TimeUtils
 {
     public static int HOURSPERDAY = 24;
     public static int ZERO = 0;
+    public static final Logger logger = LogManager.getLogger(TimeUtils.class);
 
     /**
      * Convert a string representation of a date (format: yyyy-MM-dd HH:mm) to a Date object
@@ -32,10 +36,8 @@ public class TimeUtils
         }
         catch (ParseException e)
         {
-            // TODO: Handle this exception and do better logging
-            System.out.println("Unable to parse date in current format.");
-            System.out.println("Expected: yyyy-MM-dd HH:mm");
-            System.out.println("Actual: " + sDate);
+            // TODO: Handle this exception
+            logger.error("Unable to parse date in current format. :: Expected: yyyy-MM-dd HH:mm :: Actual: " + sDate);
             e.printStackTrace();
         }
 

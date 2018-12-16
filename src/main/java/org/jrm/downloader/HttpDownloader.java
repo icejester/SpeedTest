@@ -1,10 +1,11 @@
 package org.jrm.downloader;
 
 import java.io.BufferedInputStream;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.Date;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Class model for an http based downloader. Will attempt to download the contents of
@@ -16,6 +17,8 @@ import java.util.Date;
  */
 public class HttpDownloader implements Downloader
 {
+    private static final Logger logger = LogManager.getLogger(HttpDownloader.class);
+
     public static int KB = 1024;
     public static int MBITSIZE = 125000;
     public static int MILLIS = 1000;
@@ -52,8 +55,7 @@ public class HttpDownloader implements Downloader
         }
         catch (Exception ex)
         {
-            // TODO: HANDLE THIS
-            System.out.println("Caught some exception: \n");
+            logger.warn("Caught some exception: \n");
             ex.printStackTrace();
         }
         testEndTime = new Date();

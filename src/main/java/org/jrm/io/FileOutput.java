@@ -1,5 +1,8 @@
 package org.jrm.io;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.*;
 
 /**
@@ -9,6 +12,7 @@ import java.io.*;
  */
 public class FileOutput
 {
+    public static final Logger logger = LogManager.getLogger(FileOutput.class);
     String filePath;
     Writer out = null;
 
@@ -25,8 +29,8 @@ public class FileOutput
         }
         catch(FileNotFoundException e)
         {
-            // TODO: Handle this exception and logging
-            System.out.println("Unable to open file for write: " + filePath + " "  + e);
+            // TODO: Handle this exception
+            logger.error("Unable to open file for write " + filePath);
         }
     }
 
@@ -43,8 +47,8 @@ public class FileOutput
         }
         catch(Exception e)
         {
-            // TODO: Handle this exception and logging
-            System.out.println("File Write Error: " + filePath + " "  + e);
+            // TODO: Handle this exception
+            logger.error("File write error: " + filePath);
         }
     }
 }
