@@ -44,7 +44,7 @@ public class HttpDownloader implements Downloader
         }
         catch (Exception ex)
         {
-            //TODO: HANDLE THIS
+            // TODO: HANDLE THIS
             System.out.println("Caught some exception: \n");
             ex.printStackTrace();
         }

@@ -10,18 +10,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PersistenceFactoryTest {
 
-    Persistence persistenceLayer1, persistenceLayer2;
     PersistenceFactory factory;
 
     @BeforeEach
     void setUp()
     {
         factory = new PersistenceFactory();
-        persistenceLayer2 = factory.getPersistence(PersistenceType.MONGO);
     }
 
     @AfterEach
-    void tearDown() {
+    void tearDown()
+    {
+
     }
 
     @DisplayName("Persistence layer should be of type MEMORY")
