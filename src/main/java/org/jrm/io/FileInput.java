@@ -29,6 +29,7 @@ public class FileInput
         }
         catch (FileNotFoundException e)
         {
+            // TODO: Handle this exception and logging
             System.out.println("File: " + filePath + " not found");
             this.filePath = null;
         }
@@ -54,6 +55,7 @@ public class FileInput
         }
         catch (Exception e)
         {
+            // TODO: Handle this exception and logging
             System.out.println("File Read Error: " + filePath + " " + e);
         }
         return rString;
@@ -73,6 +75,7 @@ public class FileInput
         }
         catch (IOException e)
         {
+            // TODO: Handle this exception and logging
             System.out.println("File Read Error: " + filePath + " " + e);
         }
         return rString;
@@ -86,6 +89,7 @@ public class FileInput
             try {
                 in.close();
             } catch (IOException e) {
+                // TODO: Handle this exception and logging
                 e.printStackTrace();
             }
         }

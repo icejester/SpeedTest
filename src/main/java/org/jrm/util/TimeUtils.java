@@ -13,6 +13,9 @@ import java.util.concurrent.TimeUnit;
  */
 public class TimeUtils
 {
+    public static int HOURSPERDAY = 24;
+    public static int ZERO = 0;
+
     /**
      * Convert a string representation of a date (format: yyyy-MM-dd HH:mm) to a Date object
      * @param sDate string representation of a date (format: yyyy-MM-dd HH:mm)
@@ -29,6 +32,7 @@ public class TimeUtils
         }
         catch (ParseException e)
         {
+            // TODO: Handle this exception and do better logging
             System.out.println("Unable to parse date in current format.");
             System.out.println("Expected: yyyy-MM-dd HH:mm");
             System.out.println("Actual: " + sDate);
@@ -79,11 +83,11 @@ public class TimeUtils
         Long remainingMinutes = remainingHours - TimeUnit.HOURS.toMillis(hourDif);
         Long minuteDif = TimeUnit.MILLISECONDS.toMinutes(remainingMinutes);
 
-        if(dayDif > 0)
+        if(dayDif > ZERO)
         {
-            hourDif += (24 * dayDif);
+            hourDif += (HOURSPERDAY * dayDif);
         }
-        if(minuteDif > 0)
+        if(minuteDif > ZERO)
         {
             hourDif++;
         }
